@@ -6,22 +6,9 @@ import IconButton from "@/components/IconButton";
 import { useTheme } from "next-themes";
 import { RxHamburgerMenu } from "react-icons/rx";
 
-const header = () => {
+const header = ({toggleSidebar}: { toggleSidebar: () => void }) => {
     const { theme, setTheme } = useTheme();
     const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
-    const toggleSideBar = () => {
-        const btnSideBar = document.querySelector('.btn-sidebar');
-        if (btnSideBar) {
-            btnSideBar.addEventListener('click', () => {
-                const sideBar = document.querySelector('.sideBar');
-                if (sideBar) {
-                    sideBar.classList.toggle('hidden');
-                } else {
-                    console.log('no sideBar');
-                }
-            });
-        }
-    }
     return (
         <header className="flex sticky top-0 left-0 right-0 items-center justify-between  mx-auto bg-black/50 backdrop-blur-sm p-2 md:px-6 md:py-4 z-50">
             <div>
@@ -45,8 +32,8 @@ const header = () => {
                     中文
                 </IconButton>
                 
-                <div className=" lg:hidden">
-                    <RxHamburgerMenu className="btn-sidebar" onClick={toggleSideBar}/>
+                <div className=" lg:hidden" onClick={toggleSidebar}>
+                    <RxHamburgerMenu className="btn-sidebar" />
                 </div>
             </div>
         </header>

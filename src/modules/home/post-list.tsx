@@ -43,6 +43,96 @@ const PostList = () => {
         webLink: '/',
       }
     },
+    {
+      id: 2,
+      title: "First Post2",
+      content: "This i2222222s the content of the first post.",
+      tags: ["news", "updates"],
+      groups: "小工具",
+      author: "Wendy",
+      createdAt: "2024-06-01",
+      updateAt: "2024-06-05",
+      link: {
+        githubLink: '/',
+        npmLink: '/',
+        webLink: '/',
+      }
+    },
+    {
+      id: 2,
+      title: "First Post2",
+      content: "This i2222222s the content of the first post.",
+      tags: ["news", "updates"],
+      groups: "小工具",
+      author: "Wendy",
+      createdAt: "2024-06-01",
+      updateAt: "2024-06-05",
+      link: {
+        githubLink: '/',
+        npmLink: '/',
+        webLink: '/',
+      }
+    },
+    {
+      id: 2,
+      title: "First Post2",
+      content: "This i2222222s the content of the first post.",
+      tags: ["news", "updates"],
+      groups: "小工具",
+      author: "Wendy",
+      createdAt: "2024-06-01",
+      updateAt: "2024-06-05",
+      link: {
+        githubLink: '/',
+        npmLink: '/',
+        webLink: '/',
+      }
+    },
+    {
+      id: 2,
+      title: "First Post2",
+      content: "This i2222222s the content of the first post.",
+      tags: ["news", "updates"],
+      groups: "小工具",
+      author: "Wendy",
+      createdAt: "2024-06-01",
+      updateAt: "2024-06-05",
+      link: {
+        githubLink: '/',
+        npmLink: '/',
+        webLink: '/',
+      }
+    },
+    {
+      id: 2,
+      title: "First Post2",
+      content: "This i2222222s the content of the first post.",
+      tags: ["news", "updates"],
+      groups: "小工具",
+      author: "Wendy",
+      createdAt: "2024-06-01",
+      updateAt: "2024-06-05",
+      link: {
+        githubLink: '/',
+        npmLink: '/',
+        webLink: '/',
+      }
+    },
+    {
+      id: 2,
+      title: "First Post2",
+      content: "This i2222222s the content of the first post.",
+      tags: ["news", "updates"],
+      groups: "小工具",
+      author: "Wendy",
+      createdAt: "2024-06-01",
+      updateAt: "2024-06-05",
+      link: {
+        githubLink: '/',
+        npmLink: '/',
+        webLink: '/',
+      }
+    },
   ]
   if (data?.posts) {
     data.posts = fackData

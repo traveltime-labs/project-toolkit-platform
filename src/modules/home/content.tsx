@@ -7,7 +7,7 @@ import PostList from "./post-list";
 const Content = () => {
   return (
     <>
-      <Image
+      {/* <Image
         src="/images/bitcoin-banner.jpeg"
         className="w-full rounded-lg border border-white/10"
         width={1584}
@@ -23,7 +23,7 @@ const Content = () => {
       </p>
       <div className="w-full mt-8">
         <CommentBtn />
-      </div>
+      </div> */}
 
       <PostList />
     </>

@@ -4,8 +4,14 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Sidebar from "@/components/sidebar";
 import { ThemeProvider } from 'next-themes'
+import { useState } from 'react'
+
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
+  const [ isSidebarOpen, setIsSidebarOpen ] = useState(false);
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  }
   return (
     <ThemeProvider
       attribute="class"
@@ -13,8 +19,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       enableSystem
     >
     <div className="">
-      <Header/>
-      <Sidebar/>
+      <Header toggleSidebar={toggleSidebar}/>
+      {isSidebarOpen && <Sidebar />}
       <div className="container mx-auto">
         {children}
       </div>
