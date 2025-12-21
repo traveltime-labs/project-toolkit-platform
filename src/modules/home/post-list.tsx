@@ -63,7 +63,7 @@ const PostList = () => {
       title: "First Post2",
       content: "This i2222222s the content of the first post.",
       tags: ["news", "updates"],
-      groups: "小工具",
+      groups: "套件",
       author: "Wendy",
       createdAt: "2024-06-01",
       updateAt: "2024-06-05",
@@ -78,7 +78,7 @@ const PostList = () => {
       title: "First Post2",
       content: "This i2222222s the content of the first post.",
       tags: ["news", "updates"],
-      groups: "小工具",
+      groups: "套件",
       author: "Wendy",
       createdAt: "2024-06-01",
       updateAt: "2024-06-05",
@@ -93,7 +93,7 @@ const PostList = () => {
       title: "First Post2",
       content: "This i2222222s the content of the first post.",
       tags: ["news", "updates"],
-      groups: "小工具",
+      groups: "套件",
       author: "Wendy",
       createdAt: "2024-06-01",
       updateAt: "2024-06-05",
@@ -141,6 +141,9 @@ const PostList = () => {
   const {posts=[], totalPages} = data || {};
   return (
     <>
+    {/* <div className="pt-4 text-center">
+      ui元件, 小工具
+    </div> */}
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
       {isLoading && <div>Loading...</div>}
       {error && <div> {error.message} </div>}
@@ -151,13 +154,15 @@ const PostList = () => {
               <img className="object-cover w-full h-full" src="" alt="" />
             </div>
             <div className="mt-8">
-              <h3 className="font-bold mb-2"> {post.title} </h3>
+              <h3 className="font-bold mb-2"> 
+                {post.title} <small className="bg-amber-800">{post.groups}</small>
+              </h3>
               <p className="text-blue-400 text-xs mb-4"> By Bruce </p>
               <p className="text-gray-400 text-sm mb-2">
                 {post.content}
               </p>
             </div>
-            {/* <div className="flex items-center justify-end">
+            <div className="flex items-center justify-end">
               <a className="flex items-center" href="">
                 <IoIosLink />
                 github
@@ -170,7 +175,7 @@ const PostList = () => {
                 <IoIosLink />
                 webLink
               </a>
-            </div> */}
+            </div>
             {/* <Post post={post} /> */}
           
           </Link>

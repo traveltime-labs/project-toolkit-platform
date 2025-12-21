@@ -3,4 +3,5 @@ interface Post {
   title: string;
   content: string;
   createdAt: number;
+  groups: string;
 }
