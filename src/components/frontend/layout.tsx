@@ -1,8 +1,8 @@
 "use client"
 
-import Header from "@/components/header";
+import Header from "@/components/frontend/header";
+import Sidebar from "@/components/frontend/sidebar";
 import Footer from "@/components/footer";
-import Sidebar from "@/components/sidebar";
 import { ThemeProvider } from 'next-themes'
 import { useState } from 'react'
 

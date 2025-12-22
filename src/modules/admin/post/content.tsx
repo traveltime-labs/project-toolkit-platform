@@ -1,6 +1,6 @@
 "use client";
 
-import Post from "@/components/post";
+import Post from "@/components/frontend/post";
 import { useRouter, useParams } from "next/navigation";
 import useQueryPost from "@/hooks/use-query-post";
 
@@ -14,7 +14,7 @@ const Content = () => {
 
   return (
     <div>
-        後台管理頁面 {id}
+        後台管理頁面 - 列表 {id}
       {/* <button onClick={() => router.back()} className="text-sm text-white font-bold">
         {"← Back"}
       </button>

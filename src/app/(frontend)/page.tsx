@@ -1,8 +1,8 @@
-import Layout from "@/components/layout";
-import Content from "@/modules/home/content";
+import Layout from "@/components/frontend/layout";
+import Content from "@/modules/frontend/home/content";
 import { Suspense } from "react";
 
-// 首頁
+// 首頁列表
 export default function Home() {
   return (
     <Layout>

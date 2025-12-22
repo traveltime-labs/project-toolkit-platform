@@ -4,4 +4,5 @@ interface Post {
   content: string;
   createdAt: number;
   groups: string;
+  imageUrl: string;
 }

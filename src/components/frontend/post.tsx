@@ -2,6 +2,7 @@ interface PostProps {
   post?: Post;
 }
 
+// 列表卡片
 const Post = ({ post }: PostProps) => {
   console.log(post)
   const { title = "--", content = "-", createdAt = 0 } = post || {};

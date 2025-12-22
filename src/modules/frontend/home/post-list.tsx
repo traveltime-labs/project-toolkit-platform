@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import Post from "@/components/post";
-import Pagination from "@/modules/home/pagination";
+//import Post from "@/components/frontend/post";
+import Pagination from "@/modules/frontend/home/pagination";
 import useQueryPostList from "@/hooks/use-query-post-list";
 import { MdSystemUpdateAlt } from "react-icons/md";
 import { IoIosLink } from "react-icons/io";
+import Image from "next/image";
 
 
 // 文章列表頁面
@@ -22,6 +23,7 @@ const PostList = () => {
       author: "Wendy",
       createdAt: "2024-06-01",
       updateAt: "2024-06-05",
+      image: "https://smiletaiwan.cw.com.tw/article/6084",
       link: {
         githubLink: '/',
         npmLink: '/',
@@ -37,6 +39,7 @@ const PostList = () => {
       author: "Wendy",
       createdAt: "2024-06-01",
       updateAt: "2024-06-05",
+      imageUrl: "https://pic.616pic.com/bg_w1180/00/07/39/KNuR5v4c4z.jpg",
       link: {
         githubLink: '/',
         npmLink: '/',
@@ -44,7 +47,7 @@ const PostList = () => {
       }
     },
     {
-      id: 2,
+      id: 3,
       title: "First Post2",
       content: "This i2222222s the content of the first post.",
       tags: ["news", "updates"],
@@ -52,81 +55,7 @@ const PostList = () => {
       author: "Wendy",
       createdAt: "2024-06-01",
       updateAt: "2024-06-05",
-      link: {
-        githubLink: '/',
-        npmLink: '/',
-        webLink: '/',
-      }
-    },
-    {
-      id: 2,
-      title: "First Post2",
-      content: "This i2222222s the content of the first post.",
-      tags: ["news", "updates"],
-      groups: "套件",
-      author: "Wendy",
-      createdAt: "2024-06-01",
-      updateAt: "2024-06-05",
-      link: {
-        githubLink: '/',
-        npmLink: '/',
-        webLink: '/',
-      }
-    },
-    {
-      id: 2,
-      title: "First Post2",
-      content: "This i2222222s the content of the first post.",
-      tags: ["news", "updates"],
-      groups: "套件",
-      author: "Wendy",
-      createdAt: "2024-06-01",
-      updateAt: "2024-06-05",
-      link: {
-        githubLink: '/',
-        npmLink: '/',
-        webLink: '/',
-      }
-    },
-    {
-      id: 2,
-      title: "First Post2",
-      content: "This i2222222s the content of the first post.",
-      tags: ["news", "updates"],
-      groups: "套件",
-      author: "Wendy",
-      createdAt: "2024-06-01",
-      updateAt: "2024-06-05",
-      link: {
-        githubLink: '/',
-        npmLink: '/',
-        webLink: '/',
-      }
-    },
-    {
-      id: 2,
-      title: "First Post2",
-      content: "This i2222222s the content of the first post.",
-      tags: ["news", "updates"],
-      groups: "小工具",
-      author: "Wendy",
-      createdAt: "2024-06-01",
-      updateAt: "2024-06-05",
-      link: {
-        githubLink: '/',
-        npmLink: '/',
-        webLink: '/',
-      }
-    },
-    {
-      id: 2,
-      title: "First Post2",
-      content: "This i2222222s the content of the first post.",
-      tags: ["news", "updates"],
-      groups: "小工具",
-      author: "Wendy",
-      createdAt: "2024-06-01",
-      updateAt: "2024-06-05",
+      imageUrl: "https://images.storm.mg/cloud/d862d5f07e87dd3dee25f5a5cadfdcc573b1ed86.webp?url=s3%3A%2F%2Fnew-storm-public-resource%2Fgallery%2F2100253%2FEWvyMRJaU4hUHILQJZO1jL7W0TU9sEknV0jaFgo0.png&g=sm&h=675&resize=fill&w=1200",
       link: {
         githubLink: '/',
         npmLink: '/',
@@ -151,7 +80,7 @@ const PostList = () => {
       {!isLoading && posts.map((post: Post) => (
           <Link className="p-4 pb-12 block border border-white/20 relative  overflow-hidden transition-transform duration-300 hover:-translate-y-2 cursor-pointer will-change-transform animate-fade animate-duration-500" key={post.id} href={`/post/${post.id}`}>
             <div className="aspect-video bg-gray-700">
-              <img className="object-cover w-full h-full" src="" alt="" />
+              {post.imageUrl && (<Image className="object-cover w-full h-full" src={post.imageUrl} alt="" width={400} height={225}/>)}
             </div>
             <div className="mt-8">
               <h3 className="font-bold mb-2"> 
@@ -163,7 +92,7 @@ const PostList = () => {
               </p>
             </div>
             <div className="flex items-center justify-end">
-              <a className="flex items-center" href="">
+              {/* <a className="flex items-center" href="">
                 <IoIosLink />
                 github
               </a>
@@ -174,7 +103,7 @@ const PostList = () => {
               <a className="flex items-center" href="">
                 <IoIosLink />
                 webLink
-              </a>
+              </a> */}
             </div>
             {/* <Post post={post} /> */}
           

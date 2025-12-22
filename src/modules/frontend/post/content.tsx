@@ -1,6 +1,6 @@
 "use client";
 
-import Post from "@/components/post";
+import Post from "@/components/frontend/post";
 import { useRouter, useParams } from "next/navigation";
 import useQueryPost from "@/hooks/use-query-post";
 

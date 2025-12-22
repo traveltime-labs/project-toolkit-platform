@@ -1,12 +1,12 @@
-import AdminLayout from "@/components/layout";
+import AdminLayout from "@/components/admin/layout";
 import AdminContent from "@/modules/admin/post/content"
 // import Content from "@/modules/post/content";
-const Post = () => {
+
+export default function AdminHome () {
   return (
     <AdminLayout>
       <AdminContent />
     </AdminLayout>
   );
-};
+}
 
-export default Post;
