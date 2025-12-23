@@ -15,9 +15,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       enableSystem
     >
     <div className="">
-      <Sidebar/>
-      <div className="container mx-auto">
-        {children}
+      <div className="flex">
+        <Sidebar/>
+        <div className="container mx-auto">
+          {children}
+        </div>
       </div>
       <Footer/>
     </div>
