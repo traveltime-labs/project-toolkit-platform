@@ -9,6 +9,8 @@ import { RxHamburgerMenu } from "react-icons/rx";
 const header = ({toggleSidebar}: { toggleSidebar: () => void }) => {
     const { theme, setTheme } = useTheme();
     const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
+
+    
     return (
         <header className="flex sticky top-0 left-0 right-0 items-center justify-between  mx-auto bg-black/50 backdrop-blur-sm p-2 md:px-6 md:py-4 z-50">
             <div>

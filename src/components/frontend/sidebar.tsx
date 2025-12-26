@@ -11,9 +11,9 @@ const sidebar = () => {
             </div>
             
             <div className="flex flex-col gap-3">
-                <a className="text-muted-foreground text-sm font-medium">小工具</a>
-                <a className="text-2xl font-medium" href="/">文字工具</a>
-                <a className="text-2xl font-medium" href="/">格式轉換</a>
+                <div className="text-muted-foreground text-sm font-medium">小工具</div>
+                <a className="text-2xl font-medium" href="/tools/textTool">文字統計小工具</a>
+                <a className="text-2xl font-medium" href="/tools/timestam">Timestamp ↔ 日期工具</a>
                 <a className="text-2xl font-medium" href="/">圖片處理</a>
                 <a className="text-2xl font-medium" href="/">編碼</a>
             </div>

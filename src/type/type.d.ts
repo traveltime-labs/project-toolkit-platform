@@ -3,6 +3,13 @@ interface Post {
   title: string;
   content: string;
   createdAt: number;
-  groups: string;
+  group: string;
   imageUrl: string;
+  group: string;
+  link: {
+    page: string;
+    github?: string;
+    npm?: string;
+    web?: string;
+  };
 }
