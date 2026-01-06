@@ -16,7 +16,7 @@ const PostList = () => {
   const fackData = [
     {
       id: 1,
-      title: "First Post",
+      title: "文字計算工具",
       content: "This is the content of the first post.",
       tags: ["news", "updates"],
       group: "元件",
@@ -33,7 +33,7 @@ const PostList = () => {
     },
     {
       id: 2,
-      title: "First Post2",
+      title: "亂數抽取",
       content: "This i2222222s the content of the first post.",
       tags: ["news", "updates"],
       group: "元件",
@@ -50,7 +50,7 @@ const PostList = () => {
     },
     {
       id: 3,
-      title: "First Post2",
+      title: "json 格式化 / 壓縮",
       content: "This i2222222s the content of the first post.",
       tags: ["news", "updates"],
       group: "元件",
@@ -82,6 +82,23 @@ const PostList = () => {
         web: '/',
       }
     },
+    {
+      id: 5,
+      title: "CSS三角形產生器",
+      content: "用來統計文字小工具.",
+      tags: ["strng", "updates"],
+      group: "小工具",
+      author: "Wendy",
+      createdAt: "2024-06-01",
+      updateAt: "2024-06-05",
+      imageUrl: "https://images.storm.mg/cloud/d862d5f07e87dd3dee25f5a5cadfdcc573b1ed86.webp?url=s3%3A%2F%2Fnew-storm-public-resource%2Fgallery%2F2100253%2FEWvyMRJaU4hUHILQJZO1jL7W0TU9sEknV0jaFgo0.png&g=sm&h=675&resize=fill&w=1200",
+      link: {
+        page: '/tools/text',
+        github: '/',
+        npm: '/',
+        web: '/',
+      }
+    },
   ]
   if (data?.posts) {
     data.posts = fackData
@@ -93,19 +110,19 @@ const PostList = () => {
     {/* <div className="pt-4 text-center">
       ui元件, 小工具
     </div> */}
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 mx-4 lg:mx-0">
       {isLoading && <div>Loading...</div>}
       {error && <div> {error.message} </div>}
       {!isLoading && posts.length === 0 && <div>No posts found.</div>}
       {!isLoading && posts.map((post: Post) => (
-          <Link className="p-4 pb-12 block border border-white/20 relative  overflow-hidden transition-transform duration-300 hover:-translate-y-2 cursor-pointer will-change-transform animate-fade animate-duration-500" key={post.id} 
+          <Link className="block border border-zinc-900/10 dark:border-white/20 relative overflow-hidden transition-transform duration-300 hover:-translate-y-2 cursor-pointer will-change-transform animate-fade animate-duration-500 rounded-2xl " key={post.id} 
           href={post.group == '小工具' ? `${post.link.page}` : `/post/${post.id}`}>
             <div className="aspect-video bg-gray-700">
               {post.imageUrl && (<Image className="object-cover w-full h-full" src={post.imageUrl} alt="" width={400} height={225}/>)}
             </div>
-            <div className="mt-8">
+            <div className="p-4 bg-white dark:bg-black transition-colors">
               <h3 className="font-bold mb-2"> 
-                {post.title} <small className="bg-amber-800">{post.group}</small>
+                {post.title} <small className="bg-amber-800 p-1 rounded-sm transition-colors text-white">{post.group}</small>
               </h3>
               <p className="text-blue-400 text-xs mb-4"> By Bruce </p>
               <p className="text-gray-400 text-sm mb-2">
@@ -131,9 +148,11 @@ const PostList = () => {
           </Link>
       ))}
     </div>
-    <div className="mt-8">
+    {/* 
+      <div className="mt-8">
         <Pagination totalPages={totalPages} />
       </div>
+    */}
     </>
   );
 };

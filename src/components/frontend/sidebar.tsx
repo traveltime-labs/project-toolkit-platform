@@ -1,7 +1,7 @@
 
 const sidebar = () => {
     return (
-        <div className="sideBar fixed bg-black/50 w-full h-full z-10 flex flex-col gap-12 overflow-auto px-6 py-6 backdrop-blur-sm lg:hidden" >
+        <div className="sideBar fixed bg-white dark:bg-black/50 w-full h-full z-10 flex flex-col gap-12 overflow-auto px-6 py-6 backdrop-blur-sm lg:hidden" >
             登入
             <div className="flex flex-col gap-3">
                 <a className="text-muted-foreground text-sm font-medium" href="/">UI元件</a>

@@ -1,7 +1,7 @@
 
 const footer = () => {
     return (
-        <footer className=" w-full text-center block py-4">
+        <footer className=" border-t mt-16 w-full text-center block py-4 bg-white dark:bg-black">
             copyright 2025
         </footer>
     );
