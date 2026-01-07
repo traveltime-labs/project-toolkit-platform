@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+// 邏輯
 export function useTextStats() {
     const [text, setText] = useState("");
     // 字數（中文字符，不含空白）

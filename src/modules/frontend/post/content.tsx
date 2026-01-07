@@ -14,7 +14,7 @@ const Content = () => {
 
   return (
     <div>
-      <button onClick={() => router.back()} className="text-sm text-white font-bold">
+      <button onClick={() => router.back()} className="text-sm text-dark dark:text-white font-bold">
         {"← Back"}
       </button>
       <Post post={data} />

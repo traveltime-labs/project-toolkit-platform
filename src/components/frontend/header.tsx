@@ -8,8 +8,16 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { useState } from "react";
 import { FaMoon } from "react-icons/fa";
 import { MdOutlineWbSunny } from "react-icons/md";
+import Link from "next/link";
+import { IoClose } from "react-icons/io5";
 
-const header = ({toggleSidebar}: { toggleSidebar: () => void }) => {
+
+type HeaderProps = {
+    toggleSidebar: () => void;
+    isSidebarOpen: boolean;
+}
+
+const header = ({ toggleSidebar, isSidebarOpen }: HeaderProps) => {
     const { theme, setTheme } = useTheme();
     const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
 
@@ -21,7 +29,7 @@ const header = ({toggleSidebar}: { toggleSidebar: () => void }) => {
     return (
         <header className="flex sticky top-0 left-0 right-0 items-center justify-between mx-auto bg-white dark:bg-black/50 backdrop-blur-sm p-2 md:px-6 md:py-4 z-50 w-full">
             <h1 className=" font-bold text-dark dark:text-white transition-colors">
-                Toolkit 工具集合
+                <Link href="/"> Toolkit 工具集合 </Link>
             </h1>
             
             <div className="ml-auto flex items-center gap-2 md:flex-1 md:justify-end">
@@ -42,19 +50,19 @@ const header = ({toggleSidebar}: { toggleSidebar: () => void }) => {
                     <IoIosSearch />
                 </div>
                 
-                <div data-orientation="vertical" className="bg-border w-0.5 h-4 hidden lg:block"></div>
+                    {/*<div data-orientation="vertical" className="bg-border w-0.5 h-4 hidden lg:block"></div>*/}
                     <IconButton onClick={toggleTheme}>
                         {theme === 'light' ? <FaMoon /> : <MdOutlineWbSunny />}
                     </IconButton>
                     
-                    <div data-orientation="vertical" className="bg-border w-0.5 h-4 hidden lg:block"></div>
+                    {/* <div data-orientation="vertical" className="bg-border w-0.5 h-4 hidden lg:block"></div> */}
 
                     <IconButton>
                         中文
                     </IconButton>
                 
                 <div className=" lg:hidden" onClick={toggleSidebar}>
-                    <RxHamburgerMenu className="btn-sidebar" />
+                    {!isSidebarOpen ? <RxHamburgerMenu className="btn-sidebar" /> : <IoClose className="btn-sidebar" />}
                 </div>
             </div>
         </header>

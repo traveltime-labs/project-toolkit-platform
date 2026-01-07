@@ -6,7 +6,6 @@ import Footer from "@/components/footer";
 import { ThemeProvider } from 'next-themes'
 import { useState, useEffect } from 'react'
 
-
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const [ isSidebarOpen, setIsSidebarOpen ] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -16,9 +15,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
   if (!mounted) return null;
 
-  const toggleSidebar = () => {
-    setIsSidebarOpen(isSidebarOpen => !isSidebarOpen);
-  }
+  const toggleSidebar = () => setIsSidebarOpen(isSidebarOpen => !isSidebarOpen);
 
   return (
     <ThemeProvider
@@ -27,9 +24,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       enableSystem
     >
     <div className="flex flex-col items-center bg-gray-200/35 dark:bg-black">
-      <Header toggleSidebar={toggleSidebar}/>
+      <Header toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen}/>
         {isSidebarOpen && <Sidebar />}
-        <div className="container mx-auto h-auto min-h-80">
+        <div className="container mx-4 lg:mx-auto h-auto min-h-80">
           {children}
         </div>
       <Footer/>
