@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export function useRandomPwdState() {
+export function useGeneratePasswordState() {
     const [len, setLength] = useState(12);
     const [code, setCode] = useState("");
 

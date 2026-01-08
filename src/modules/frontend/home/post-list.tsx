@@ -17,7 +17,7 @@ const PostList = () => {
     {
       id: 1,
       title: "文字計算工具",
-      content: "This is the content of the first post.",
+      content: "文字計算工具.",
       tags: ["news", "updates"],
       group: "元件",
       author: "Wendy",
@@ -93,7 +93,7 @@ const PostList = () => {
       updateAt: "2024-06-05",
       imageUrl: "https://images.storm.mg/cloud/d862d5f07e87dd3dee25f5a5cadfdcc573b1ed86.webp?url=s3%3A%2F%2Fnew-storm-public-resource%2Fgallery%2F2100253%2FEWvyMRJaU4hUHILQJZO1jL7W0TU9sEknV0jaFgo0.png&g=sm&h=675&resize=fill&w=1200",
       link: {
-        page: '/tools/randomPwd',
+        page: '/tools/generatePassword',
         github: '/',
         npm: '/',
         web: '/',

@@ -10,6 +10,7 @@ import { FaMoon } from "react-icons/fa";
 import { MdOutlineWbSunny } from "react-icons/md";
 import Link from "next/link";
 import { IoClose } from "react-icons/io5";
+import Breadcrumb from "@/components/frontend/breadcrumb";
 
 
 type HeaderProps = {
@@ -27,44 +28,46 @@ const header = ({ toggleSidebar, isSidebarOpen }: HeaderProps) => {
     }
     
     return (
-        <header className="flex sticky top-0 left-0 right-0 items-center justify-between mx-auto bg-white dark:bg-black/50 backdrop-blur-sm p-2 md:px-6 md:py-4 z-50 w-full">
-            <h1 className=" font-bold text-dark dark:text-white transition-colors">
-                <Link href="/"> Toolkit 工具集合 </Link>
-            </h1>
-            
-            <div className="ml-auto flex items-center gap-2 md:flex-1 md:justify-end">
-                <div className='hidden md:flex items-center gap-2 border rounded-4xl px-2 py-1.5'>
-                    <input type="text" className="w-40"
-                        placeholder="Search..."
-                        value={keyword}
-                        onChange={(e) => setKeyword(e.target.value)}
-                        onKeyDown = {(e) => { if (e.key === 'Enter') serachKeyword() }}
-                    />
-                    <IconButton className=" flex justify-end">
-                        <IoIosSearch />
-                    </IconButton>
-                </div>
+        <header className=" sticky top-0 left-0 right-0  bg-white dark:bg-black/50 backdrop-blur-sm z-50 w-full">
+            <div className=" py-3 px-2 lg:px-12 w-full flex items-center justify-between mx-auto">
+                <h1 className=" font-bold text-dark dark:text-white transition-colors">
+                    <Link href="/"> Toolkit 工具集合 </Link>
+                </h1>
+                <div className="ml-auto flex items-center gap-2 md:flex-1 md:justify-end">
+                    <div className='hidden md:flex items-center gap-2 border rounded-4xl px-2 py-1.5'>
+                        <input type="text" className="w-40"
+                            placeholder="Search..."
+                            value={keyword}
+                            onChange={(e) => setKeyword(e.target.value)}
+                            onKeyDown = {(e) => { if (e.key === 'Enter') serachKeyword() }}
+                        />
+                        <IconButton className=" flex justify-end">
+                            <IoIosSearch />
+                        </IconButton>
+                    </div>
 
-                
-                <div className="block md:hidden">
-                    <IoIosSearch />
-                </div>
-                
-                    {/*<div data-orientation="vertical" className="bg-border w-0.5 h-4 hidden lg:block"></div>*/}
-                    <IconButton onClick={toggleTheme}>
-                        {theme === 'light' ? <FaMoon /> : <MdOutlineWbSunny />}
-                    </IconButton>
                     
-                    {/* <div data-orientation="vertical" className="bg-border w-0.5 h-4 hidden lg:block"></div> */}
+                    <div className="block md:hidden">
+                        <IoIosSearch />
+                    </div>
+                    
+                        {/*<div data-orientation="vertical" className="bg-border w-0.5 h-4 hidden lg:block"></div>*/}
+                        <IconButton onClick={toggleTheme}>
+                            {theme === 'light' ? <FaMoon /> : <MdOutlineWbSunny />}
+                        </IconButton>
+                        
+                        {/* <div data-orientation="vertical" className="bg-border w-0.5 h-4 hidden lg:block"></div> */}
 
-                    <IconButton>
-                        中文
-                    </IconButton>
-                
-                <div className=" lg:hidden" onClick={toggleSidebar}>
-                    {!isSidebarOpen ? <RxHamburgerMenu className="btn-sidebar" /> : <IoClose className="btn-sidebar" />}
+                        <IconButton>
+                            中文
+                        </IconButton>
+                    
+                    <div className=" lg:hidden" onClick={toggleSidebar}>
+                        {!isSidebarOpen ? <RxHamburgerMenu className="btn-sidebar" /> : <IoClose className="btn-sidebar" />}
+                    </div>
                 </div>
             </div>
+            <Breadcrumb/>
         </header>
     );
 }
