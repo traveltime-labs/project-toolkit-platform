@@ -17,7 +17,7 @@ const Content = () => {
   console.log(id)
 //   const { data, isLoading, error} = useQueryPost();
   return (
-    <div>
+    <div>x
       <PostEditor/>
 
         <table className=" w-full">

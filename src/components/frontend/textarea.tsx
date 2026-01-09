@@ -19,7 +19,7 @@ function TextArea (
     return (
         <textarea 
         placeholder="placeholder"
-        className="border rounded-lg bg-gray-100 dark:bg-gray-950 p-4 mb-4 w-full min-h-96" 
+        className="border rounded-lg bg-gray-100 dark:bg-gray-950 p-4 mb-4 w-full min-h-80" 
         onChange={(e) => onChange(e.target.value)}>
         </textarea>
     )

@@ -8,11 +8,10 @@ text/
 └── useTextStats.ts    ← 自訂 hook，純邏輯（state & 計算）
 */
 
-
 export default function Page() {
   return (
     <Layout>
-      <TextCounter />
+        <TextCounter />
     </Layout>
   );
 }

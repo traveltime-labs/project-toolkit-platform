@@ -3,6 +3,7 @@
 import { useTextStats } from "@/app/(frontend)/tools/text/useTextStats";
 import Textarea from "@/components/frontend/textarea"
 import Content from "@/components/frontend/content";
+import InnerSideBar from "@/components/frontend/innerSidebar";
 // 列表內頁
 /**
  * 功能特點
@@ -18,8 +19,34 @@ import Content from "@/components/frontend/content";
 // 可再擴充 即時統計功能
 const textCounter = () => {
   const { text, setText, charCount, lineCount, wordCount, punctuationCount, avgLineLength, longestLine } = useTextStats();
+  const description = {
+    "title":"功能特點",
+    "features":[
+      {
+        "title":"即時統計",
+        "description":"輸入文字即時顯示統計結果"
+      },
+      {
+        "title":"多維度分析",
+        "description":"提供字數、行數、單詞等多項數據"
+      },
+      {
+        "title":"簡潔直觀使用介面",
+        "description":"方便快速取得所需資訊"
+      }
+    ],
+    "instructionsTitle": "使用說明",
+    "instructions":[
+      "在下方的文字輸入區域輸入或貼上您想要分析的文字內容",
+      "系統會自動計算並顯示相關的文字統計資訊",
+      "您可以根據需要調整輸入的文字內容，統計資訊會即時更新"
+    ]
+  }
   return (
-    <Content title="文字統計小工具">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 max-w-[1600px] mx-4 lg:mx-auto my-8">
+      <InnerSideBar description={description}/>
+
+    <Content title="文字統計小工具" className="col-span-1 lg:col-span-2">
       <Textarea
         placeholder="輸入文字..."
         value={text}
@@ -49,11 +76,12 @@ const textCounter = () => {
           平均行長
         </div>
         <div className="border rounded-xl p-4 flex flex-col justify-between">
-          <b className="block text-2xl text-gray-600 break-normal my-2">{longestLine ? longestLine : '目前沒有資料'}</b>
+          <b className="block text-2xl text-gray-600 break-normal my-2 wrap-break-word">{longestLine ? longestLine : '目前沒有資料'}</b>
           最多字的行
         </div>
       </div>
     </Content>
+    </div>
   );
 };
 

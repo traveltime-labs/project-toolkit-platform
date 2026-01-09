@@ -1,30 +1,27 @@
 "use client"
 
-import Sidebar from "@/components/admin/sidebar"
+import AppSidebar from "@/components/admin/app-sidebar"
 import Footer from "@/components/footer";
 import { ThemeProvider } from 'next-themes'
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import { useState } from 'react'
 
-
-const Layout = ({ children }: { children: React.ReactNode }) => {
-
+function Layout({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider
       attribute="class"
       defaultTheme="system"
       enableSystem
     >
-    <div className="">
-      <div className="flex">
-        <Sidebar/>
-        <div className="container mx-auto">
+      <SidebarProvider>
+        <AppSidebar />
+        <main>
+          <SidebarTrigger />
           {children}
-        </div>
-      </div>
-      <Footer/>
-    </div>
+        </main>
+      </SidebarProvider>
     </ThemeProvider>
-  );
-};
+  )
+}
 
 export default Layout;

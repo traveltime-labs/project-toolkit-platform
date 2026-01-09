@@ -4,6 +4,7 @@ interface Post {
   content: string;
   createdAt: number;
   group: string;
+  category: string;
   imageUrl: string;
   group: string;
   link: {

@@ -11,7 +11,6 @@ const Content = () => {
   console.log(id)
   const { data, isLoading, error} = useQueryPost();
 
-
   return (
     <div>
       <button onClick={() => router.back()} className="text-sm text-dark dark:text-white font-bold">

@@ -26,7 +26,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     <div className="flex flex-col items-center bg-gray-200/35 dark:bg-black">
       <Header toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen}/>
         {isSidebarOpen && <Sidebar />}
-        <div className=" w-full lg:mx-auto h-auto min-h-80 px-2 lg:px-12">
+        <div className="w-full lg:mx-auto h-auto min-h-80 max-w-[1600px]">
           {children}
         </div>
       <Footer/>
