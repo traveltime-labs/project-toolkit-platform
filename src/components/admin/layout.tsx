@@ -15,7 +15,7 @@ function Layout({ children }: { children: React.ReactNode }) {
     >
       <SidebarProvider>
         <AppSidebar />
-        <main>
+        <main className="w-full p-4 bg-gray-100">
           <SidebarTrigger />
           {children}
         </main>

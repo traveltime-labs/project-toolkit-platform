@@ -17,22 +17,24 @@ const Content = () => {
   console.log(id)
 //   const { data, isLoading, error} = useQueryPost();
   return (
-    <div>x
+    <div className="p-8 bg-white rounded-xl">
+      
       <PostEditor/>
 
         <table className=" w-full">
-            <thead>
+            <thead className="bg-gray-200 h-10">
                 <tr>
                   <th>圖片</th>
                   <th>名稱</th>
                   <th>詳細資料</th>
                   <th>時間</th>
+                  <th>是否啟用</th>
                   <th>功能</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>
+                <tr className="border-b">
+                    <td className="py-8">
                       <Image className="object-cover w-full h-full" src="https://smiletaiwan.cw.com.tw/article/6084" alt="" width={400} height={225}/>
                     </td>
                     <td>Sample Post 1</td>
@@ -40,19 +42,10 @@ const Content = () => {
                     <td>2024-06-01</td>
                     <td>
                       <div><Switch /></div>
-                      <div>刪除</div>
                     </td>
-                </tr>
-                <tr>
                     <td>
-                      <Image className="object-cover w-full h-full" src="https://smiletaiwan.cw.com.tw/article/6084" alt="" width={400} height={225}/>
-                    </td>
-                    <td>Sample Post 1</td>
-                    <td>詳細資料</td>
-                    <td>2024-06-01</td>
-                    <td>
-                      <div><Switch /></div>
-                      <div>刪除</div>
+                      <button>編輯</button>
+                      <button>刪除</button>
                     </td>
                 </tr>
             </tbody>

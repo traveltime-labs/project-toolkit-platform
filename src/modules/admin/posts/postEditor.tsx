@@ -85,49 +85,65 @@ const CommentEditor = (/*{ isOpen, setIsOpen }: CommentEditorProps*/) => {
 
   return (
     <Dialog>
-      <DialogTrigger>Open</DialogTrigger>
+      <div className="w-full text-right">
+        <DialogTrigger >新增文章</DialogTrigger>
+      </div>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Are you absolutely sure?</DialogTitle>
+          <DialogTitle>新增文章</DialogTitle>
           <DialogDescription>
-            請選擇設定
+            新增文章
           </DialogDescription>
         </DialogHeader>
-        <DialogFooter>
         <div className="grid gap-4">
           <div className="grid w-full max-w-sm items-center gap-3">
-            <Label htmlFor="picture">Picture</Label>
+            <Label htmlFor="picture">圖片</Label>
             <Input id="picture" type="file" />
           </div>
           <Select>
             <SelectTrigger className="w-[180px]">
+              <Label htmlFor="picture">選擇分類</Label>
               <SelectValue placeholder="Theme" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="light">Light</SelectItem>
-              <SelectItem value="dark">Dark</SelectItem>
-              <SelectItem value="system">System</SelectItem>
+              <SelectItem value="小工具">小工具</SelectItem>
+              <SelectItem value="套件">套件</SelectItem>
             </SelectContent>
           </Select>
-          tag: 先用checkbox 寫死
+          <Select>
+            <SelectTrigger className="w-[180px]">
+              <Label htmlFor="picture">選擇群組</Label>
+              <SelectValue placeholder="Theme" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="文字">文字</SelectItem>
+              <SelectItem value="JSON">JSON</SelectItem>
+            </SelectContent>
+          </Select>
+          選擇標籤（可多選）：
           <div className="flex items-start gap-3">
-            <Checkbox id="toggle"  />
-            <Label htmlFor="toggle">Enable notifications</Label>
+            <Checkbox id="JSON"  />
+            <Label htmlFor="JSON">JSON</Label>
+            <Checkbox id="React"  />
+            <Label htmlFor="React">React</Label>
+            <Checkbox id="壓縮"  />
+            <Label htmlFor="壓縮">壓縮</Label>
           </div>
             <div className="grid gap-3">
-              <Label htmlFor="name-1">Name</Label>
-              <Input id="name-1" name="name" defaultValue="Pedro Duarte" />
+              <Label htmlFor="name-1">title</Label>
+              <Input id="name-1" name="name" defaultValue="title" />
             </div>
             <div className="grid gap-3">
-              <Label htmlFor="username-1">Username</Label>
-              <Input id="username-1" name="username" defaultValue="@peduarte" />
+              <Label htmlFor="username-1">author</Label>
+              <Input id="author" name="author" defaultValue="@peduarte" />
             </div>
-            <Textarea placeholder="Type your message here." />
+            <Textarea placeholder="詳細描述" />
           </div>
+          <DialogFooter>
             <DialogClose asChild>
-              <Button variant="outline">Cancel</Button>
+              <Button variant="outline">取消</Button>
             </DialogClose>
-            <Button type="submit">Save changes</Button>
+            <Button type="submit">儲存</Button>
           </DialogFooter>
       </DialogContent>
     </Dialog>

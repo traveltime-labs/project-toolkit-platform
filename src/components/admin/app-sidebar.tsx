@@ -14,15 +14,15 @@ export default function AppSidebar () {
 
       const projects = [
         {
-            name: 'aaa',
-            url: '/admin/aaa',
+            name: '列表',
+            url: '/admin/posts',
         }
       ]
     return  (
         <Sidebar>
             <SidebarContent>
                 <SidebarGroup>
-                <SidebarGroupLabel>Projects</SidebarGroupLabel>
+                {/* <SidebarGroupLabel>Projects</SidebarGroupLabel> */}
                     <SidebarGroupContent>
                         <SidebarMenu>
                         {projects.map((project) => (
@@ -39,7 +39,7 @@ export default function AppSidebar () {
                     </SidebarGroupContent>
                 </SidebarGroup>
             </SidebarContent>
-            </Sidebar>
+        </Sidebar>
     )
 }
 
